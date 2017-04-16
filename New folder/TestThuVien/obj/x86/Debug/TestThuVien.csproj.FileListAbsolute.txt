@@ -111,3 +111,22 @@ D:\TestThuVien_7_4_2017\TestThuVien_6_4_2017\TestThuVien\obj\x86\Debug\TestThuVi
 D:\TestThuVien_7_4_2017\TestThuVien_6_4_2017\TestThuVien\obj\x86\Debug\TestThuVien.csproj.GenerateResource.Cache
 D:\TestThuVien_7_4_2017\TestThuVien_6_4_2017\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_BienBan.resources
 D:\TestThuVien_7_4_2017\TestThuVien_6_4_2017\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_LienHe.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.exe
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.pdb
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\bin\Debug\TestThuVien.exe
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\bin\Debug\TestThuVien.pdb
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.csprojResolveAssemblyReference.cache
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_BienBan.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_Chinh.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_DangKy.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_DangNhap.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_GioThieu.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_HoiVien.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_LienHe.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_LoaiSach.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_QLKho.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_QLMuon.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_QLSach.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_QLTra.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.Properties.Resources.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.csproj.GenerateResource.Cache
