@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using TestThuVien.QLThuVienDTO;
 namespace TestThuVien.GiaoDien
 {
     public partial class Frm_DangNhap : Form
     {
+        public  static string quyen;
+        KetNoiDT kd = new KetNoiDT();
+        DataTable tb = new DataTable();
         public Frm_DangNhap()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace TestThuVien.GiaoDien
 
         private void txt_Username_Click(object sender, EventArgs e)
         {
-            if (txt_TaiKhoanDN.Text == "Tài Khoản")
+            if (txt_TaiKhoanDN.Text == "")
             {
                 txt_TaiKhoanDN.Clear();
                
@@ -38,7 +41,7 @@ namespace TestThuVien.GiaoDien
 
         private void txt_Password_Click(object sender, EventArgs e)
         {
-            if (txt_MatKhauDN.Text == "Mật Khẩu")
+            if (txt_MatKhauDN.Text == "")
             {
                 txt_MatKhauDN.Clear();
                 txt_MatKhauDN.PasswordChar = '*';
@@ -59,11 +62,56 @@ namespace TestThuVien.GiaoDien
 
         private void but_Dangnhap_Click(object sender, EventArgs e)
         {
-            if (txt_TaiKhoanDN.Text == "admin" && txt_MatKhauDN.Text == "admin")
+            try
             {
-                Frm_Chinh trangchu = new Frm_Chinh();
-                trangchu.ShowDialog();
+                SqlParameter pr1 = new SqlParameter("@tendn", txt_TaiKhoanDN.Text);
+                //SqlParameter pr2 = new SqlParameter("@mkdn", txt_MatKhauDN.Text);
+                tb = kd.sqlLayDuLieu("dangnhap", pr1);
+                string taikhoan = tb.Rows[tb.Rows.Count - 1]["TenNguoiDung"].ToString();
+                string matkhau = tb.Rows[tb.Rows.Count - 1][tb.Rows.Count].ToString();
+                quyen = tb.Rows[tb.Rows.Count - 1][tb.Rows.Count + 1].ToString();
+                if (txt_MatKhauDN.Text == "")
+                {
+                    MessageBox.Show("Chưa nhập mật khẩu");
+                }
+                else  if(txt_MatKhauDN.Text==matkhau)
+               {
+                       Frm_Chinh chinh = new Frm_Chinh();
+                       chinh.ShowDialog();
+                       txt_TaiKhoanDN.Clear();
+                       txt_MatKhauDN.Clear();
+               }
+                else
+               {
+                   MessageBox.Show("Sai Mật Khẩu");
+                   txt_MatKhauDN.Clear();
+                   txt_MatKhauDN.Focus();
+               }
+            }catch
+            {
+                MessageBox.Show("Tài khoản chưa đăng ký");
             }
+            //if (taikhoan!=txt_TaiKhoanDN.Text)
+            //{
+            //    MessageBox.Show("Tên tài khoản chưa đăng ký.");
+            //}
+            //else if (taikhoan == txt_TaiKhoanDN.Text)
+            //{
+            //    string matkhau = tb.Rows[tb.Rows.Count]["MatKhau"].ToString();
+            //    MessageBox.Show(matkhau);
+
+            //}
+            
+            //if (txt_TaiKhoanDN.Text == "" && txt_MatKhauDN.Text == "")
+            //{
+            //    Frm_Chinh trangchu = new Frm_Chinh();
+            //    trangchu.ShowDialog();
+            //}
+        }
+
+        private void button1_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_MatKhauDN.PasswordChar = '\0';
         }
        }
 }

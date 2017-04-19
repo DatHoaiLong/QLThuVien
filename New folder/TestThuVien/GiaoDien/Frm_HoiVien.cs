@@ -54,6 +54,14 @@ namespace TestThuVien.GiaoDien
         }
         private void Frm_HoiVien_Load(object sender, EventArgs e)
         {
+            if (Frm_DangNhap.quyen.ToString() == "1")
+            {
+
+            }
+            if (Frm_DangNhap.quyen.ToString() == "2")
+            {
+                btnxoa.Enabled = false;
+            }
             KhoaDieuKien();
             HienThi("");
         }
@@ -175,6 +183,8 @@ namespace TestThuVien.GiaoDien
 
         private void dataGiVHoiVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (Frm_DangNhap.quyen.ToString() == "1")
+            {
             try
             {
                 
@@ -186,14 +196,24 @@ namespace TestThuVien.GiaoDien
                 txtsodienthoai.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtemail.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[6].Value.ToString();
                 btnxoa.Enabled = true;
-                buttomsua.Enabled = true;
-                
-              
+                buttomsua.Enabled = true; 
             }
             catch
             {
             }
-                
+
+        }else  if (Frm_DangNhap.quyen.ToString() == "2")
+                {
+                    txtmahoivien.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    txtdiachi.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    comboxgioitinh.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    txtho.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    txtten.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    txtsodienthoai.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    txtemail.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    buttomsua.Enabled = true; 
+                    btnxoa.Enabled = false;
+                }      
         }
 
         private void btnthoat_Click(object sender, EventArgs e)

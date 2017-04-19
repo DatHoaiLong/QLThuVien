@@ -78,7 +78,6 @@
             this.txt_TaiKhoanDK.Name = "txt_TaiKhoanDK";
             this.txt_TaiKhoanDK.Size = new System.Drawing.Size(207, 26);
             this.txt_TaiKhoanDK.TabIndex = 8;
-            this.txt_TaiKhoanDK.Text = "Tài Khoản";
             this.txt_TaiKhoanDK.Click += new System.EventHandler(this.txt_TaiKhoanDK_Click);
             // 
             // label3
@@ -98,9 +97,9 @@
             this.txt_MatKhauDK.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txt_MatKhauDK.Location = new System.Drawing.Point(171, 235);
             this.txt_MatKhauDK.Name = "txt_MatKhauDK";
+            this.txt_MatKhauDK.PasswordChar = '*';
             this.txt_MatKhauDK.Size = new System.Drawing.Size(207, 26);
             this.txt_MatKhauDK.TabIndex = 11;
-            this.txt_MatKhauDK.Text = "Mật Khẩu";
             this.txt_MatKhauDK.Click += new System.EventHandler(this.txt_MatKhauDK_Click);
             // 
             // label4
@@ -120,9 +119,9 @@
             this.txt_NhapLaiMK.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txt_NhapLaiMK.Location = new System.Drawing.Point(171, 298);
             this.txt_NhapLaiMK.Name = "txt_NhapLaiMK";
+            this.txt_NhapLaiMK.PasswordChar = '*';
             this.txt_NhapLaiMK.Size = new System.Drawing.Size(207, 26);
             this.txt_NhapLaiMK.TabIndex = 14;
-            this.txt_NhapLaiMK.Text = "Nhập Lại MK";
             this.txt_NhapLaiMK.Click += new System.EventHandler(this.txt_NhapLaiMK_Click);
             // 
             // but_DangKy
@@ -139,6 +138,7 @@
             this.but_DangKy.TabIndex = 17;
             this.but_DangKy.Text = "Đăng Ký";
             this.but_DangKy.UseVisualStyleBackColor = false;
+            this.but_DangKy.Click += new System.EventHandler(this.but_DangKy_Click);
             // 
             // pictureBox5
             // 
@@ -193,6 +193,7 @@
             // 
             // Frm_DangKy
             // 
+            this.AcceptButton = this.but_DangKy;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));

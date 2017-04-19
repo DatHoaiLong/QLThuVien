@@ -15,7 +15,7 @@ namespace TestThuVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Chinh());
+            Application.Run(new Frm_DangNhap());
         }
     }
 }

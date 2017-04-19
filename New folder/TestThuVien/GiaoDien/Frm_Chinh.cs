@@ -86,6 +86,15 @@ namespace TestThuVien.GiaoDien
                 listView1.Items[i].ImageIndex = i;
                 
             }
+            if(Frm_DangNhap.quyen.ToString()=="1")
+            {
+                
+            }
+            if (Frm_DangNhap.quyen.ToString() == "2")
+            {
+                but_QLKho.Enabled = false;
+            }
+
           
         }
 
@@ -184,6 +193,14 @@ namespace TestThuVien.GiaoDien
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.BackgroundImage = Image.FromFile("icon/012_power512.png");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning )== DialogResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }

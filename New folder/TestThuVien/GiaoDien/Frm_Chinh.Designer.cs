@@ -55,6 +55,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.imgSach = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_SaoLuu = new System.Windows.Forms.Button();
+            this.btn_PhucHoi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -65,6 +67,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel1.Controls.Add(this.btn_PhucHoi);
+            this.panel1.Controls.Add(this.btn_SaoLuu);
             this.panel1.Controls.Add(this.cob_TimKiem);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.but_TiemKiem);
@@ -407,8 +411,27 @@
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // btn_SaoLuu
+            // 
+            this.btn_SaoLuu.Location = new System.Drawing.Point(9, 279);
+            this.btn_SaoLuu.Name = "btn_SaoLuu";
+            this.btn_SaoLuu.Size = new System.Drawing.Size(158, 47);
+            this.btn_SaoLuu.TabIndex = 5;
+            this.btn_SaoLuu.Text = "Sao lưu dữ liệu";
+            this.btn_SaoLuu.UseVisualStyleBackColor = true;
+            // 
+            // btn_PhucHoi
+            // 
+            this.btn_PhucHoi.Location = new System.Drawing.Point(1, 344);
+            this.btn_PhucHoi.Name = "btn_PhucHoi";
+            this.btn_PhucHoi.Size = new System.Drawing.Size(164, 47);
+            this.btn_PhucHoi.TabIndex = 6;
+            this.btn_PhucHoi.Text = "Phục hồi dữ liệu";
+            this.btn_PhucHoi.UseVisualStyleBackColor = true;
             // 
             // Frm_Chinh
             // 
@@ -468,5 +491,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cob_TimKiem;
         private System.Windows.Forms.ImageList imgSach;
+        private System.Windows.Forms.Button btn_PhucHoi;
+        private System.Windows.Forms.Button btn_SaoLuu;
     }
 }

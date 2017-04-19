@@ -121,6 +121,7 @@
     <Compile Include="GiaoDien\SQLDat.cs" />
     <Compile Include="HeThong\ChiTietMuonSach.cs" />
     <Compile Include="HeThong\ChiTietTraSach.cs" />
+    <Compile Include="HeThong\DangKy.cs" />
     <Compile Include="HeThong\HoiVien.cs" />
     <Compile Include="HeThong\KhoSach.cs" />
     <Compile Include="HeThong\PhanLoaiSach.cs" />
