@@ -109,9 +109,21 @@ namespace TestThuVien.GiaoDien
             //}
         }
 
-        private void button1_MouseClick(object sender, MouseEventArgs e)
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
         {
+            pictureBox2.BackgroundImage = Image.FromFile("icon/eyesopen.png");
             txt_MatKhauDN.PasswordChar = '\0';
         }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.BackgroundImage = Image.FromFile("icon/eyesclose.png");
+            txt_MatKhauDN.PasswordChar = '*';
+        }
+
+        //private void button1_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    txt_MatKhauDN.PasswordChar = '\0';
+        //}
        }
 }

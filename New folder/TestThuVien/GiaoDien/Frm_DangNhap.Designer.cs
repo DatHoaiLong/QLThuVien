@@ -40,10 +40,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_TaiKhoanDN
@@ -119,7 +120,7 @@
             this.but_Dangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Dangnhap.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Dangnhap.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_Dangnhap.Location = new System.Drawing.Point(75, 366);
+            this.but_Dangnhap.Location = new System.Drawing.Point(74, 335);
             this.but_Dangnhap.Name = "but_Dangnhap";
             this.but_Dangnhap.Size = new System.Drawing.Size(102, 33);
             this.but_Dangnhap.TabIndex = 11;
@@ -136,9 +137,9 @@
             this.but_Thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Thoat.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Thoat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_Thoat.Location = new System.Drawing.Point(331, 366);
+            this.but_Thoat.Location = new System.Drawing.Point(330, 335);
             this.but_Thoat.Name = "but_Thoat";
-            this.but_Thoat.Size = new System.Drawing.Size(70, 33);
+            this.but_Thoat.Size = new System.Drawing.Size(102, 33);
             this.but_Thoat.TabIndex = 12;
             this.but_Thoat.Text = "Thoát";
             this.but_Thoat.UseVisualStyleBackColor = false;
@@ -152,9 +153,9 @@
             this.but_Dangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Dangky.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Dangky.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_Dangky.Location = new System.Drawing.Point(216, 366);
+            this.but_Dangky.Location = new System.Drawing.Point(202, 335);
             this.but_Dangky.Name = "but_Dangky";
-            this.but_Dangky.Size = new System.Drawing.Size(79, 33);
+            this.but_Dangky.Size = new System.Drawing.Size(102, 33);
             this.but_Dangky.TabIndex = 13;
             this.but_Dangky.Text = "Đăng Ký";
             this.but_Dangky.UseVisualStyleBackColor = false;
@@ -190,21 +191,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // pictureBox2
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(174, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 33);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Hiển thị mật khẩu";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
+            this.pictureBox2.BackgroundImage = global::TestThuVien.Properties.Resources.eyesclose;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(232, 260);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
             // 
             // Frm_DangNhap
             // 
@@ -213,8 +210,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CancelButton = this.but_Thoat;
-            this.ClientSize = new System.Drawing.Size(500, 420);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(492, 397);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.but_Dangky);
             this.Controls.Add(this.but_Thoat);
             this.Controls.Add(this.but_Dangnhap);
@@ -235,6 +232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,6 +252,6 @@
         private System.Windows.Forms.Button but_Dangnhap;
         private System.Windows.Forms.Button but_Thoat;
         private System.Windows.Forms.Button but_Dangky;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

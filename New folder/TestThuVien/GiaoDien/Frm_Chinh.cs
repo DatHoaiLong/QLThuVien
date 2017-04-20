@@ -197,7 +197,7 @@ namespace TestThuVien.GiaoDien
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning )== DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn đăng xuất không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning )== DialogResult.OK)
             {
                 this.Close();
             }

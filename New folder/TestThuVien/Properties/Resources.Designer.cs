@@ -194,6 +194,16 @@ namespace TestThuVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eyesclose {
+            get {
+                object obj = ResourceManager.GetObject("eyesclose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap href {
             get {
                 object obj = ResourceManager.GetObject("href", resourceCulture);
