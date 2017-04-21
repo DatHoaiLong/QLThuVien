@@ -120,7 +120,7 @@
             this.but_Dangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Dangnhap.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Dangnhap.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_Dangnhap.Location = new System.Drawing.Point(74, 335);
+            this.but_Dangnhap.Location = new System.Drawing.Point(74, 284);
             this.but_Dangnhap.Name = "but_Dangnhap";
             this.but_Dangnhap.Size = new System.Drawing.Size(102, 33);
             this.but_Dangnhap.TabIndex = 11;
@@ -137,7 +137,7 @@
             this.but_Thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Thoat.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Thoat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_Thoat.Location = new System.Drawing.Point(330, 335);
+            this.but_Thoat.Location = new System.Drawing.Point(330, 284);
             this.but_Thoat.Name = "but_Thoat";
             this.but_Thoat.Size = new System.Drawing.Size(102, 33);
             this.but_Thoat.TabIndex = 12;
@@ -153,7 +153,7 @@
             this.but_Dangky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Dangky.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Dangky.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_Dangky.Location = new System.Drawing.Point(202, 335);
+            this.but_Dangky.Location = new System.Drawing.Point(202, 284);
             this.but_Dangky.Name = "but_Dangky";
             this.but_Dangky.Size = new System.Drawing.Size(102, 33);
             this.but_Dangky.TabIndex = 13;
@@ -195,9 +195,9 @@
             // 
             this.pictureBox2.BackgroundImage = global::TestThuVien.Properties.Resources.eyesclose;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(232, 260);
+            this.pictureBox2.Location = new System.Drawing.Point(378, 229);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
@@ -210,7 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CancelButton = this.but_Thoat;
-            this.ClientSize = new System.Drawing.Size(492, 397);
+            this.ClientSize = new System.Drawing.Size(492, 354);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.but_Dangky);
             this.Controls.Add(this.but_Thoat);
