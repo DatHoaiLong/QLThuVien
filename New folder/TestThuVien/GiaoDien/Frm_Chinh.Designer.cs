@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.butlinkrestore = new System.Windows.Forms.Button();
+            this.butlinbk = new System.Windows.Forms.Button();
+            this.txtresote = new System.Windows.Forms.TextBox();
+            this.but_Restore = new System.Windows.Forms.Button();
+            this.but_Backup = new System.Windows.Forms.Button();
+            this.txt_Backup = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cob_TimKiem = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,9 +62,8 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.imgSach = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_SaoLuu = new System.Windows.Forms.Button();
-            this.btn_PhucHoi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -67,8 +73,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.btn_PhucHoi);
-            this.panel1.Controls.Add(this.btn_SaoLuu);
+            this.panel1.Controls.Add(this.butlinkrestore);
+            this.panel1.Controls.Add(this.butlinbk);
+            this.panel1.Controls.Add(this.txtresote);
+            this.panel1.Controls.Add(this.but_Restore);
+            this.panel1.Controls.Add(this.but_Backup);
+            this.panel1.Controls.Add(this.txt_Backup);
+            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.cob_TimKiem);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.but_TiemKiem);
@@ -79,6 +90,98 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(170, 589);
             this.panel1.TabIndex = 1;
+            // 
+            // butlinkrestore
+            // 
+            this.butlinkrestore.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.butlinkrestore.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.butlinkrestore.FlatAppearance.BorderSize = 0;
+            this.butlinkrestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butlinkrestore.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.butlinkrestore.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.butlinkrestore.Location = new System.Drawing.Point(35, 465);
+            this.butlinkrestore.Name = "butlinkrestore";
+            this.butlinkrestore.Size = new System.Drawing.Size(100, 26);
+            this.butlinkrestore.TabIndex = 25;
+            this.butlinkrestore.Text = "Get Link";
+            this.butlinkrestore.UseVisualStyleBackColor = false;
+            this.butlinkrestore.Click += new System.EventHandler(this.bulinrestore_Click);
+            // 
+            // butlinbk
+            // 
+            this.butlinbk.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.butlinbk.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.butlinbk.FlatAppearance.BorderSize = 0;
+            this.butlinbk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butlinbk.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.butlinbk.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.butlinbk.Location = new System.Drawing.Point(36, 339);
+            this.butlinbk.Name = "butlinbk";
+            this.butlinbk.Size = new System.Drawing.Size(102, 26);
+            this.butlinbk.TabIndex = 24;
+            this.butlinbk.Text = "Get Link";
+            this.butlinbk.UseVisualStyleBackColor = false;
+            this.butlinbk.Click += new System.EventHandler(this.butlinbk_Click);
+            // 
+            // txtresote
+            // 
+            this.txtresote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtresote.Location = new System.Drawing.Point(20, 433);
+            this.txtresote.Name = "txtresote";
+            this.txtresote.ReadOnly = true;
+            this.txtresote.Size = new System.Drawing.Size(135, 26);
+            this.txtresote.TabIndex = 23;
+            // 
+            // but_Restore
+            // 
+            this.but_Restore.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.but_Restore.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.but_Restore.FlatAppearance.BorderSize = 0;
+            this.but_Restore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but_Restore.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.but_Restore.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.but_Restore.Location = new System.Drawing.Point(35, 497);
+            this.but_Restore.Name = "but_Restore";
+            this.but_Restore.Size = new System.Drawing.Size(100, 30);
+            this.but_Restore.TabIndex = 21;
+            this.but_Restore.Text = "Restore";
+            this.but_Restore.UseVisualStyleBackColor = false;
+            this.but_Restore.Click += new System.EventHandler(this.but_Restore_Click);
+            // 
+            // but_Backup
+            // 
+            this.but_Backup.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.but_Backup.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.but_Backup.FlatAppearance.BorderSize = 0;
+            this.but_Backup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but_Backup.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.but_Backup.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.but_Backup.Location = new System.Drawing.Point(36, 371);
+            this.but_Backup.Name = "but_Backup";
+            this.but_Backup.Size = new System.Drawing.Size(100, 30);
+            this.but_Backup.TabIndex = 19;
+            this.but_Backup.Text = "Backup";
+            this.but_Backup.UseVisualStyleBackColor = false;
+            this.but_Backup.Click += new System.EventHandler(this.but_Backup_Click);
+            // 
+            // txt_Backup
+            // 
+            this.txt_Backup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_Backup.Location = new System.Drawing.Point(21, 307);
+            this.txt_Backup.Name = "txt_Backup";
+            this.txt_Backup.ReadOnly = true;
+            this.txt_Backup.Size = new System.Drawing.Size(135, 26);
+            this.txt_Backup.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::TestThuVien.Properties.Resources.h123;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(9, 287);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(158, 274);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
             // 
             // cob_TimKiem
             // 
@@ -96,7 +199,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel4.BackColor = System.Drawing.Color.Blue;
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(0, 214);
             this.panel4.Name = "panel4";
@@ -112,7 +215,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Danh Mục Tài Liệu";
+            this.label1.Text = "Backup -- Restore ";
             // 
             // but_TiemKiem
             // 
@@ -415,24 +518,6 @@
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             // 
-            // btn_SaoLuu
-            // 
-            this.btn_SaoLuu.Location = new System.Drawing.Point(9, 279);
-            this.btn_SaoLuu.Name = "btn_SaoLuu";
-            this.btn_SaoLuu.Size = new System.Drawing.Size(158, 47);
-            this.btn_SaoLuu.TabIndex = 5;
-            this.btn_SaoLuu.Text = "Sao lưu dữ liệu";
-            this.btn_SaoLuu.UseVisualStyleBackColor = true;
-            // 
-            // btn_PhucHoi
-            // 
-            this.btn_PhucHoi.Location = new System.Drawing.Point(1, 344);
-            this.btn_PhucHoi.Name = "btn_PhucHoi";
-            this.btn_PhucHoi.Size = new System.Drawing.Size(164, 47);
-            this.btn_PhucHoi.TabIndex = 6;
-            this.btn_PhucHoi.Text = "Phục hồi dữ liệu";
-            this.btn_PhucHoi.UseVisualStyleBackColor = true;
-            // 
             // Frm_Chinh
             // 
             this.AcceptButton = this.but_TiemKiem;
@@ -449,9 +534,11 @@
             this.Name = "Frm_Chinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Chinh";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Chinh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -491,7 +578,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cob_TimKiem;
         private System.Windows.Forms.ImageList imgSach;
-        private System.Windows.Forms.Button btn_PhucHoi;
-        private System.Windows.Forms.Button btn_SaoLuu;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txt_Backup;
+        private System.Windows.Forms.Button but_Backup;
+        private System.Windows.Forms.Button but_Restore;
+        private System.Windows.Forms.TextBox txtresote;
+        private System.Windows.Forms.Button butlinkrestore;
+        private System.Windows.Forms.Button butlinbk;
     }
 }

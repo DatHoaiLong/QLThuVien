@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using TestThuVien.QLThuVienDTO;
@@ -14,6 +15,7 @@ namespace TestThuVien.GiaoDien
     public partial class Frm_Chinh : Form
     {
         KetNoiDT data = new KetNoiDT();
+
         public Frm_Chinh()
         {
             InitializeComponent();
@@ -93,6 +95,12 @@ namespace TestThuVien.GiaoDien
             if (Frm_DangNhap.quyen.ToString() == "2")
             {
                 but_QLKho.Enabled = false;
+                but_Backup.Enabled = false;
+                butlinbk.Enabled = false;
+                butlinkrestore.Enabled = false;
+                txt_Backup.Enabled = false;
+                txtresote.Enabled = false;
+                but_Restore.Enabled = false;
             }
 
           
@@ -200,6 +208,111 @@ namespace TestThuVien.GiaoDien
             if (MessageBox.Show("Bạn có muốn đăng xuất không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning )== DialogResult.OK)
             {
                 this.Close();
+            }
+        }
+
+        private void but_Bower_Backup_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog file = new FolderBrowserDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                txt_Backup.Text = file.SelectedPath;
+                but_Backup.Enabled = true;
+            }
+        }
+
+        private void but_Backup_Click(object sender, EventArgs e)
+        {
+            if(txt_Backup.Text=="")
+            {
+                MessageBox.Show("Chưa chọn đường dẫn");
+
+            }else
+            {
+                try
+                {
+                    //thuc hien backup
+                    if (!Directory.Exists(Path.GetDirectoryName(txt_Backup.Text)))
+                    {
+                        MessageBox.Show("Thư mục không tồn tại");
+                    }
+                    else
+                    {
+                        data.MoKetNoi();
+                        SqlCommand cmdbackup = new SqlCommand();
+                        cmdbackup.CommandType = CommandType.Text;
+                        cmdbackup.Connection = KetNoiDT.connect;
+                        cmdbackup.CommandText =
+                       "BACKUP DATABASE ThuVienSo TO DISK='" + txt_Backup.Text + "'WITH FORMAT";
+                        cmdbackup.ExecuteNonQuery();
+                        MessageBox.Show("Backup thành  công");
+                        txt_Backup.Text = "";
+
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+        }
+        FileDialog dl;
+
+        private void butlinbk_Click(object sender, EventArgs e)
+        {
+            if (txt_Backup.Text == "")
+            {
+                dl = new SaveFileDialog();
+            }
+            dl.Filter = "File  type (*.bak)|*.bak";
+            dl.DefaultExt = "bak";
+            if (dl.ShowDialog() == DialogResult.OK)
+            {
+                txt_Backup.Text = dl.FileName;
+            }
+        }
+
+        private void bulinrestore_Click(object sender, EventArgs e)
+        {
+            if (txtresote.Text == "")
+            {
+                dl = new OpenFileDialog();
+            }
+            dl.Filter = "File  type (*.bak)|*.bak";
+            dl.DefaultExt = "bak";
+            if (dl.ShowDialog() == DialogResult.OK)
+            {
+                txtresote.Text= dl.FileName;
+            }
+        }
+
+        private void but_Restore_Click(object sender, EventArgs e)
+        {
+            //thuc hien restore
+            try
+            {
+                if (!File.Exists(txtresote.Text))
+                {
+                    MessageBox.Show("File không tồn tại");
+                }
+                else
+                {
+                    data.MoKetNoi();
+                    SqlCommand cmdrestore = new SqlCommand();
+                    cmdrestore.Connection = KetNoiDT.connect;
+                    cmdrestore.CommandType = CommandType.Text;
+                    cmdrestore.CommandText = "ALTER DATABASE ThuVienSo SET OFFLINE WITH ROLLBACK IMMEDIATE USE master RESTORE DATABASE ThuVienSo FROM DISK='" + txtresote.Text + "' WITH REPLACE ALTER DATABASE ThuVienSo SET ONLINE";
+                    cmdrestore.ExecuteNonQuery();
+                    if (MessageBox.Show("Restore thành công hãy khởi động lại ứng dụng để cập nhật dữ liệu", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                    {
+                        txtresote.Text = "";
+                        this.Close();                              
+                    }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

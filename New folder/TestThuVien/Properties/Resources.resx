@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="arrow-back-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-back-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="khung" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\khung.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,6 +136,9 @@
   <data name="metro_search_112611" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\metro_search_112611.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Edit-Flat-Long-Shadow-Icon-cssauthor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit-Flat-Long-Shadow-Icon-cssauthor.com_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="liprary" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\liprary.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,11 +151,17 @@
   <data name="thanh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\icon\thanh.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eyesclose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eyesclose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="012_power512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\icon\012_power512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Login-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login-Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow-back-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-back-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -174,9 +180,6 @@
   </data>
   <data name="698956-icon-111-search-1281" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\698956-icon-111-search-1281.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inside-logout-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inside-logout-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="depositphotos_57106395-stock-illustration-set-of-flat-design-concepts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\depositphotos_57106395-stock-illustration-set-of-flat-design-concepts.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,8 +205,8 @@
   <data name="698956-icon-111-search-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\698956-icon-111-search-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit-Flat-Long-Shadow-Icon-cssauthor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Edit-Flat-Long-Shadow-Icon-cssauthor.com_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inside-logout-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inside-logout-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tải xuốn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tải xuốn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,7 +214,7 @@
   <data name="122399357" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\122399357.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eyesclose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eyesclose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="h123" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\icon\h123.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

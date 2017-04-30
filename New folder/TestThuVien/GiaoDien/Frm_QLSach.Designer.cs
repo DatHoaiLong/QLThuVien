@@ -46,7 +46,6 @@
             this.buttomsua = new System.Windows.Forms.Button();
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnthemmoi = new System.Windows.Forms.Button();
-            this.txt_NgayXuatBan = new System.Windows.Forms.TextBox();
             this.dataGridView_Sach = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +63,7 @@
             this.btnluu = new System.Windows.Forms.Button();
             this.butThemLS = new System.Windows.Forms.Button();
             this.but_XoaLS = new System.Windows.Forms.Button();
+            this.time_NgayXuatBan = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -284,15 +284,6 @@
             this.btnthemmoi.UseVisualStyleBackColor = false;
             this.btnthemmoi.Click += new System.EventHandler(this.btnthemmoi_Click_1);
             // 
-            // txt_NgayXuatBan
-            // 
-            this.txt_NgayXuatBan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_NgayXuatBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_NgayXuatBan.Location = new System.Drawing.Point(473, 395);
-            this.txt_NgayXuatBan.Name = "txt_NgayXuatBan";
-            this.txt_NgayXuatBan.Size = new System.Drawing.Size(224, 26);
-            this.txt_NgayXuatBan.TabIndex = 27;
-            // 
             // dataGridView_Sach
             // 
             this.dataGridView_Sach.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -487,12 +478,23 @@
             this.but_XoaLS.UseVisualStyleBackColor = false;
             this.but_XoaLS.Click += new System.EventHandler(this.but_XoaLS_Click);
             // 
+            // time_NgayXuatBan
+            // 
+            this.time_NgayXuatBan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.time_NgayXuatBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time_NgayXuatBan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.time_NgayXuatBan.Location = new System.Drawing.Point(473, 388);
+            this.time_NgayXuatBan.Name = "time_NgayXuatBan";
+            this.time_NgayXuatBan.Size = new System.Drawing.Size(224, 26);
+            this.time_NgayXuatBan.TabIndex = 53;
+            // 
             // Frm_QLSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(846, 650);
+            this.Controls.Add(this.time_NgayXuatBan);
             this.Controls.Add(this.but_XoaLS);
             this.Controls.Add(this.butThemLS);
             this.Controls.Add(this.btnluu);
@@ -502,7 +504,6 @@
             this.Controls.Add(this.txt_MaLoaiSach);
             this.Controls.Add(this.combo_loaisach);
             this.Controls.Add(this.dataGridView_Sach);
-            this.Controls.Add(this.txt_NgayXuatBan);
             this.Controls.Add(this.buttomsua);
             this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btnthemmoi);
@@ -557,7 +558,6 @@
         private System.Windows.Forms.Button buttomsua;
         private System.Windows.Forms.Button btnxoa;
         private System.Windows.Forms.Button btnthemmoi;
-        private System.Windows.Forms.TextBox txt_NgayXuatBan;
         private System.Windows.Forms.DataGridView dataGridView_Sach;
         private System.Windows.Forms.ComboBox combo_loaisach;
         private System.Windows.Forms.TextBox txt_MaLoaiSach;
@@ -575,5 +575,6 @@
         private System.Windows.Forms.Button btnluu;
         private System.Windows.Forms.Button butThemLS;
         private System.Windows.Forms.Button but_XoaLS;
+        private System.Windows.Forms.DateTimePicker time_NgayXuatBan;
     }
 }

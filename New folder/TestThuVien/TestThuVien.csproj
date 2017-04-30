@@ -34,8 +34,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GiaoDien\Frm_BienBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +83,12 @@
     </Compile>
     <Compile Include="GiaoDien\Frm_GioThieu.Designer.cs">
       <DependentUpon>Frm_GioThieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GiaoDien\Frm_InThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GiaoDien\Frm_InThongKe.Designer.cs">
+      <DependentUpon>Frm_InThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="GiaoDien\Frm_LienHe.cs">
       <SubType>Form</SubType>
@@ -118,7 +132,6 @@
     <Compile Include="GiaoDien\Frm_QLTra.Designer.cs">
       <DependentUpon>Frm_QLTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien\SQLDat.cs" />
     <Compile Include="HeThong\ChiTietMuonSach.cs" />
     <Compile Include="HeThong\ChiTietTraSach.cs" />
     <Compile Include="HeThong\DangKy.cs" />
@@ -159,6 +172,9 @@
     <EmbeddedResource Include="GiaoDien\Frm_HoiVien.resx">
       <DependentUpon>Frm_HoiVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GiaoDien\Frm_InThongKe.resx">
+      <DependentUpon>Frm_InThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GiaoDien\Frm_LienHe.resx">
       <DependentUpon>Frm_LienHe.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +193,7 @@
     <EmbeddedResource Include="GiaoDien\Frm_QLTra.resx">
       <DependentUpon>Frm_QLTra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="In.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -187,6 +204,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -292,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eyesclose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\icon\h123.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

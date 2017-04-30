@@ -76,10 +76,14 @@ namespace TestThuVien.GiaoDien
                 }
                 else  if(txt_MatKhauDN.Text==matkhau)
                {
+                   
                        Frm_Chinh chinh = new Frm_Chinh();
+                       this.Hide();
                        chinh.ShowDialog();
+                       this.Show();
                        txt_TaiKhoanDN.Clear();
                        txt_MatKhauDN.Clear();
+                       //this.Close();
                }
                 else
                {
@@ -91,22 +95,6 @@ namespace TestThuVien.GiaoDien
             {
                 MessageBox.Show("Tài khoản chưa đăng ký");
             }
-            //if (taikhoan!=txt_TaiKhoanDN.Text)
-            //{
-            //    MessageBox.Show("Tên tài khoản chưa đăng ký.");
-            //}
-            //else if (taikhoan == txt_TaiKhoanDN.Text)
-            //{
-            //    string matkhau = tb.Rows[tb.Rows.Count]["MatKhau"].ToString();
-            //    MessageBox.Show(matkhau);
-
-            //}
-            
-            //if (txt_TaiKhoanDN.Text == "" && txt_MatKhauDN.Text == "")
-            //{
-            //    Frm_Chinh trangchu = new Frm_Chinh();
-            //    trangchu.ShowDialog();
-            //}
         }
 
         private void pictureBox2_MouseEnter(object sender, EventArgs e)

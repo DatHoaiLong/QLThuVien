@@ -44,9 +44,6 @@
             this.but_ThoiHan = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_SoLuong = new System.Windows.Forms.TextBox();
-            this.txt_NgayMuon = new System.Windows.Forms.TextBox();
-            this.txt_NgayHenTra = new System.Windows.Forms.TextBox();
-            this.txt_NgayHienTai = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_TenHV = new System.Windows.Forms.TextBox();
             this.dataGridView_QLTraSach = new System.Windows.Forms.DataGridView();
@@ -57,6 +54,10 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time_NgayMuon = new System.Windows.Forms.DateTimePicker();
+            this.time_NgayHenTra = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.but_BB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_QLTraSach)).BeginInit();
@@ -206,7 +207,7 @@
             this.but_TraSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_TraSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_TraSach.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_TraSach.Location = new System.Drawing.Point(247, 312);
+            this.but_TraSach.Location = new System.Drawing.Point(175, 312);
             this.but_TraSach.Name = "but_TraSach";
             this.but_TraSach.Size = new System.Drawing.Size(118, 27);
             this.but_TraSach.TabIndex = 34;
@@ -223,7 +224,7 @@
             this.but_ThoiHan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_ThoiHan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_ThoiHan.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_ThoiHan.Location = new System.Drawing.Point(390, 311);
+            this.but_ThoiHan.Location = new System.Drawing.Point(327, 311);
             this.but_ThoiHan.Name = "but_ThoiHan";
             this.but_ThoiHan.Size = new System.Drawing.Size(154, 27);
             this.but_ThoiHan.TabIndex = 35;
@@ -251,33 +252,6 @@
             this.txt_SoLuong.Size = new System.Drawing.Size(49, 24);
             this.txt_SoLuong.TabIndex = 39;
             this.txt_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SoLuong_KeyPress);
-            // 
-            // txt_NgayMuon
-            // 
-            this.txt_NgayMuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_NgayMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_NgayMuon.Location = new System.Drawing.Point(523, 166);
-            this.txt_NgayMuon.Name = "txt_NgayMuon";
-            this.txt_NgayMuon.Size = new System.Drawing.Size(219, 26);
-            this.txt_NgayMuon.TabIndex = 40;
-            // 
-            // txt_NgayHenTra
-            // 
-            this.txt_NgayHenTra.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_NgayHenTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_NgayHenTra.Location = new System.Drawing.Point(523, 213);
-            this.txt_NgayHenTra.Name = "txt_NgayHenTra";
-            this.txt_NgayHenTra.Size = new System.Drawing.Size(219, 26);
-            this.txt_NgayHenTra.TabIndex = 41;
-            // 
-            // txt_NgayHienTai
-            // 
-            this.txt_NgayHienTai.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_NgayHienTai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_NgayHienTai.Location = new System.Drawing.Point(523, 258);
-            this.txt_NgayHienTai.Name = "txt_NgayHienTai";
-            this.txt_NgayHienTai.Size = new System.Drawing.Size(219, 26);
-            this.txt_NgayHienTai.TabIndex = 42;
             // 
             // label9
             // 
@@ -380,18 +354,66 @@
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
+            // time_NgayMuon
+            // 
+            this.time_NgayMuon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.time_NgayMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time_NgayMuon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.time_NgayMuon.Location = new System.Drawing.Point(523, 164);
+            this.time_NgayMuon.Name = "time_NgayMuon";
+            this.time_NgayMuon.Size = new System.Drawing.Size(219, 26);
+            this.time_NgayMuon.TabIndex = 53;
+            // 
+            // time_NgayHenTra
+            // 
+            this.time_NgayHenTra.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.time_NgayHenTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time_NgayHenTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.time_NgayHenTra.Location = new System.Drawing.Point(523, 209);
+            this.time_NgayHenTra.Name = "time_NgayHenTra";
+            this.time_NgayHenTra.Size = new System.Drawing.Size(219, 26);
+            this.time_NgayHenTra.TabIndex = 54;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(523, 255);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(219, 26);
+            this.dateTimePicker1.TabIndex = 55;
+            // 
+            // but_BB
+            // 
+            this.but_BB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.but_BB.BackColor = System.Drawing.Color.DodgerBlue;
+            this.but_BB.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.but_BB.FlatAppearance.BorderSize = 0;
+            this.but_BB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but_BB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.but_BB.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.but_BB.Location = new System.Drawing.Point(515, 311);
+            this.but_BB.Name = "but_BB";
+            this.but_BB.Size = new System.Drawing.Size(118, 27);
+            this.but_BB.TabIndex = 56;
+            this.but_BB.Text = "Biên Bản";
+            this.but_BB.UseVisualStyleBackColor = false;
+            this.but_BB.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_QLTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(786, 525);
+            this.Controls.Add(this.but_BB);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.time_NgayHenTra);
+            this.Controls.Add(this.time_NgayMuon);
             this.Controls.Add(this.txt_TenHV);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView_QLTraSach);
-            this.Controls.Add(this.txt_NgayHienTai);
-            this.Controls.Add(this.txt_NgayHenTra);
-            this.Controls.Add(this.txt_NgayMuon);
             this.Controls.Add(this.txt_SoLuong);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.but_ThoiHan);
@@ -438,9 +460,6 @@
         private System.Windows.Forms.Button but_ThoiHan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_SoLuong;
-        private System.Windows.Forms.TextBox txt_NgayMuon;
-        private System.Windows.Forms.TextBox txt_NgayHenTra;
-        private System.Windows.Forms.TextBox txt_NgayHienTai;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_TenHV;
         private System.Windows.Forms.DataGridView dataGridView_QLTraSach;
@@ -451,5 +470,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DateTimePicker time_NgayMuon;
+        private System.Windows.Forms.DateTimePicker time_NgayHenTra;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button but_BB;
     }
 }

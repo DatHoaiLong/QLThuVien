@@ -65,12 +65,12 @@ namespace TestThuVien.GiaoDien
             txt_TenTacGia.Enabled = false;
             combo_loaisach.Enabled = false;
             txt_SoLuong.Enabled = false;
-            txt_NgayXuatBan.Enabled = false;
+            time_NgayXuatBan.Enabled = false;
             txt_MaLoaiSach.Enabled = false;
             btnthemmoi.Enabled = true;
             btnluu.Enabled = false;
             buttomsua.Enabled = false;
-            btnxoa.Enabled = true;
+            btnxoa.Enabled = false;
             but_XoaLS.Enabled = false;
             butThemLS.Enabled = false;
         }
@@ -81,7 +81,7 @@ namespace TestThuVien.GiaoDien
             txt_TenTacGia.Enabled = true;
             combo_loaisach.Enabled = true;
             txt_SoLuong.Enabled = true;
-            txt_NgayXuatBan.Enabled = true;
+            time_NgayXuatBan.Enabled = true;
             txt_MaLoaiSach.Enabled = false;
             btnthemmoi.Enabled = false;
             btnluu.Enabled = true;
@@ -92,7 +92,7 @@ namespace TestThuVien.GiaoDien
         }
         private void Frm_QLSach_Load(object sender, EventArgs e)
         {
-           
+
             KhoaDieuKien();
             HienThi("");
             combo_loaisach.Text = "----Chọn Loại Sách----";
@@ -114,7 +114,7 @@ namespace TestThuVien.GiaoDien
             txt_TenTacGia.Text = "";
             combo_loaisach.Text = "";
             txt_SoLuong.Text="";
-            txt_NgayXuatBan.Text = "";
+            time_NgayXuatBan.Text = "";
         }
         void HienThi(string where)
         {
@@ -145,19 +145,10 @@ namespace TestThuVien.GiaoDien
         private void buttomsua_Click_1(object sender, EventArgs e)
         {
             MoDieuKien();
-          txt_MaSach.Enabled = false;
+            txt_MaSach.Enabled = false;
+            buttomsua.Enabled = false;
             themmoi = false;
             //------------------------------------------------
-            SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
-            SqlParameter para2 = new SqlParameter("@tensach", txt_TenSach.Text);
-            SqlParameter para3 = new SqlParameter("@MaLoaiSach", txt_MaLoaiSach.Text);
-            SqlParameter para4 = new SqlParameter("@tenloaisach", combo_loaisach.Text);
-            SqlParameter para5 = new SqlParameter("@TenTacGia", txt_TenTacGia.Text);
-            SqlParameter para6 = new SqlParameter("@NgayXuatBan", txt_NgayXuatBan.Text);
-            SqlParameter para7 = new SqlParameter("@hinh", linkanh);
-            SqlParameter para8 = new SqlParameter("@soluong", txt_SoLuong.Text);
-            kn.sqlThucThi("suathongtinsach", para1, para2, para3, para4, para5, para6, para7, para8);
-            HienThi(""); 
         }
 
         private void btnxoa_Click_1(object sender, EventArgs e)
@@ -200,13 +191,23 @@ namespace TestThuVien.GiaoDien
                 txt_TenTacGia.Text = dataGridView_Sach.Rows[e.RowIndex].Cells[3].Value.ToString();
                 combo_loaisach.Text = dataGridView_Sach.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txt_MaLoaiSach.Text = dataGridView_Sach.Rows[e.RowIndex].Cells[5].Value.ToString();
-                txt_NgayXuatBan.Text = dataGridView_Sach.Rows[e.RowIndex].Cells[6].Value.ToString();
+                time_NgayXuatBan.Text = dataGridView_Sach.Rows[e.RowIndex].Cells[6].Value.ToString();
                 pictureBox3.BackgroundImage = Image.FromFile(dataGridView_Sach.Rows[e.RowIndex].Cells[7].Value.ToString());
                 pictureBox3.Show();
                 linkanh = dataGridView_Sach.Rows[e.RowIndex].Cells[7].Value.ToString();
-                MoDieuKien();
-                  btnthemmoi.Enabled = true;
+                KhoaDieuKien();
+                btnthemmoi.Enabled = true;
+                buttomsua.Enabled = true;
+                btnxoa.Enabled = true;
                 btnluu.Enabled = false;
+                if (Frm_DangNhap.quyen.ToString() == "1")
+                {
+
+                }
+                if (Frm_DangNhap.quyen.ToString() == "2")
+                {
+                    btnxoa.Enabled = false;
+                }
                 /*-----------------------------------------------------*/
             }
             catch (Exception EX)
@@ -290,7 +291,11 @@ namespace TestThuVien.GiaoDien
 
         private void btnluu_Click(object sender, EventArgs e)
         {
-             
+            if (txt_MaLoaiSach.Text == "" || txt_MaSach.Text == "" || txt_SoLuong.Text == "" || txt_TenSach.Text == "" || txt_TenTacGia.Text == "")
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin.");
+                return;
+            }
             if(themmoi==true)
             {
                 try
@@ -307,7 +312,7 @@ namespace TestThuVien.GiaoDien
                     SqlParameter para3 =new SqlParameter("@MaLoaiSach",txt_MaLoaiSach.Text);
                      SqlParameter para4=new SqlParameter("@tenloaisach",combo_loaisach.Text);
                      SqlParameter para5 =new SqlParameter("@TenTacGia",txt_TenTacGia.Text); 
-                     SqlParameter para6=new SqlParameter("@NgayXuatBan",txt_NgayXuatBan.Text);
+                     SqlParameter para6=new SqlParameter("@NgayXuatBan",time_NgayXuatBan.Text);
                      SqlParameter para7=new SqlParameter("@hinh",linkanh); 
                     SqlParameter para8 =new SqlParameter("@soluong",txt_SoLuong.Text);
                     kn.sqlThucThi("luuthongtinsach",para1,para2,para3,para4,para5,para6,para7,para8);
@@ -319,25 +324,36 @@ namespace TestThuVien.GiaoDien
                     
 
                 }
-                catch(Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Không lưu được");
                     return;
                 }
-            }else
+
+            }
+else
             {
                 try
                 {
-                   
-
+                    SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
+                    SqlParameter para2 = new SqlParameter("@tensach", txt_TenSach.Text);
+                    SqlParameter para3 = new SqlParameter("@MaLoaiSach", txt_MaLoaiSach.Text);
+                    SqlParameter para4 = new SqlParameter("@tenloaisach", combo_loaisach.Text);
+                    SqlParameter para5 = new SqlParameter("@TenTacGia", txt_TenTacGia.Text);
+                    SqlParameter para6 = new SqlParameter("@NgayXuatBan", time_NgayXuatBan.Text);
+                    SqlParameter para7 = new SqlParameter("@hinh", linkanh);
+                    SqlParameter para8 = new SqlParameter("@soluong", txt_SoLuong.Text);
+                    kn.sqlThucThi("suathongtinsach", para1, para2, para3, para4, para5, para6, para7, para8);
+                    HienThi("");
+                    MessageBox.Show("Sữa thành công .");
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Không sữa được");
                     return;
                 }
             }
-             SetNull();
+            SetNull();
             KhoaDieuKien();
             HienThi("");
 

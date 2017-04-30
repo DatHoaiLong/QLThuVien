@@ -14,7 +14,6 @@ namespace TestThuVien.GiaoDien
 {
     public partial class Frm_QLTra : Form
     {
-        
         public Frm_QLTra()
         {
             InitializeComponent();
@@ -30,12 +29,13 @@ namespace TestThuVien.GiaoDien
             but_ThoiHan.Enabled = false;
             but_Tim.Enabled = true;
             txt_MaHV.Enabled = true;
-            txt_NgayHenTra.Enabled = false;
-            txt_NgayHienTai.Enabled = false;
-            txt_NgayMuon.Enabled = false;
+            time_NgayHenTra.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            time_NgayMuon.Enabled = false;
             txt_SoLuong.Enabled = false;
             txt_TenHV.Enabled = false;
             txt_TenSach.Enabled = false;
+            but_BB.Enabled = false;
         }
         void modukien()
         {
@@ -44,6 +44,7 @@ namespace TestThuVien.GiaoDien
             txt_SoLuong.Enabled =true;
             but_Tim.Enabled = true;
             txt_MaHV.Enabled = true;
+            but_BB.Enabled = true;
         }
         private void Frm_QLTra_Load(object sender, EventArgs e)
         {
@@ -64,9 +65,9 @@ namespace TestThuVien.GiaoDien
                 txt_TenHV.Text = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[1].Value.ToString();
                 txt_TenSach.Text = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txt_SoLuong.Text = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txt_NgayMuon.Text = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[5].Value.ToString();
-                txt_NgayHenTra.Text = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txt_NgayHienTai.Text = DateTime.Now.ToString();
+                time_NgayMuon.Text = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[5].Value.ToString();
+                time_NgayHenTra.Text = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[6].Value.ToString();
+                dateTimePicker1.Text = DateTime.Now.ToString();
 
                 masach = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[2].Value.ToString();
                 soluong = Convert.ToInt32(dataGridView_QLTraSach.Rows[e.RowIndex].Cells[4].Value.ToString());
@@ -163,8 +164,8 @@ namespace TestThuVien.GiaoDien
 
             try
             {
-                SqlParameter para1 = new SqlParameter("@ngayhentra", txt_NgayHenTra.Text);
-                SqlParameter para2 = new SqlParameter("@ngayhientai", txt_NgayHienTai.Text);
+                SqlParameter para1 = new SqlParameter("@ngayhentra", time_NgayHenTra.Text);
+                SqlParameter para2 = new SqlParameter("@ngayhientai", dateTimePicker1.Text);
            DataTable ngay= kn.sqlLayDuLieu("sp_kiemtradate", para1,para2);
            if (Convert.ToInt32(ngay.Rows[0][0].ToString()) >=0)
            {
@@ -174,6 +175,9 @@ namespace TestThuVien.GiaoDien
            else
            {
                MessageBox.Show("Bạn đã trả quá thời hạn.");
+               Frm_BienBan bb = new Frm_BienBan();
+               bb.truyendulieu(txt_TenHV.Text, txt_MaHV.Text);
+               bb.ShowDialog();
            }
               
             }
@@ -182,6 +186,13 @@ namespace TestThuVien.GiaoDien
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Frm_BienBan bb = new Frm_BienBan();
+            bb.truyendulieu(txt_TenHV.Text, txt_MaHV.Text);
+            bb.ShowDialog();
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using TestThuVien.HeThong;
 using TestThuVien.QLThuVienBus;
 using TestThuVien.QLThuVienDTO;
+using System.Drawing.Printing;
 namespace TestThuVien.GiaoDien
 {
     public partial class Frm_QLKho : Form
@@ -22,6 +23,7 @@ namespace TestThuVien.GiaoDien
         private void Frm_QLKho_Load(object sender, EventArgs e)
         {
             HienThi("");
+            //this.reportViewer1.RefreshReport();
         }
         void HienThi(string where)
         {
@@ -34,6 +36,12 @@ namespace TestThuVien.GiaoDien
             {
                 this.Close();
             }
+        }
+
+        private void but_Luu_Click(object sender, EventArgs e)
+        {
+            Frm_InThongKe tk = new Frm_InThongKe();
+            tk.ShowDialog();
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnsua = new System.Windows.Forms.Panel();
+            this.but_TheHV = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +59,8 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.btnsua.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +70,7 @@
             // btnsua
             // 
             this.btnsua.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnsua.Controls.Add(this.but_TheHV);
             this.btnsua.Controls.Add(this.panel1);
             this.btnsua.Controls.Add(this.buttomsua);
             this.btnsua.Controls.Add(this.btnxoa);
@@ -92,6 +96,22 @@
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(754, 348);
             this.btnsua.TabIndex = 0;
+            // 
+            // but_TheHV
+            // 
+            this.but_TheHV.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.but_TheHV.BackColor = System.Drawing.Color.DodgerBlue;
+            this.but_TheHV.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.but_TheHV.FlatAppearance.BorderSize = 0;
+            this.but_TheHV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but_TheHV.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.but_TheHV.Location = new System.Drawing.Point(596, 296);
+            this.but_TheHV.Name = "but_TheHV";
+            this.but_TheHV.Size = new System.Drawing.Size(107, 36);
+            this.but_TheHV.TabIndex = 22;
+            this.but_TheHV.Text = "Thẻ Hội Viên";
+            this.but_TheHV.UseVisualStyleBackColor = false;
+            this.but_TheHV.Click += new System.EventHandler(this.but_TheHV_Click);
             // 
             // panel1
             // 
@@ -134,7 +154,7 @@
             this.buttomsua.FlatAppearance.BorderSize = 0;
             this.buttomsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttomsua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttomsua.Location = new System.Drawing.Point(392, 299);
+            this.buttomsua.Location = new System.Drawing.Point(325, 299);
             this.buttomsua.Name = "buttomsua";
             this.buttomsua.Size = new System.Drawing.Size(96, 35);
             this.buttomsua.TabIndex = 20;
@@ -150,7 +170,7 @@
             this.btnxoa.FlatAppearance.BorderSize = 0;
             this.btnxoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnxoa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnxoa.Location = new System.Drawing.Point(595, 301);
+            this.btnxoa.Location = new System.Drawing.Point(455, 299);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(107, 31);
             this.btnxoa.TabIndex = 18;
@@ -166,7 +186,7 @@
             this.btnluu.FlatAppearance.BorderSize = 0;
             this.btnluu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnluu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnluu.Location = new System.Drawing.Point(215, 297);
+            this.btnluu.Location = new System.Drawing.Point(184, 299);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(107, 35);
             this.btnluu.TabIndex = 16;
@@ -182,7 +202,7 @@
             this.btnthemmoi.FlatAppearance.BorderSize = 0;
             this.btnthemmoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnthemmoi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnthemmoi.Location = new System.Drawing.Point(33, 299);
+            this.btnthemmoi.Location = new System.Drawing.Point(43, 299);
             this.btnthemmoi.Name = "btnthemmoi";
             this.btnthemmoi.Size = new System.Drawing.Size(107, 36);
             this.btnthemmoi.TabIndex = 15;
@@ -218,6 +238,7 @@
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(199, 26);
             this.txtten.TabIndex = 12;
+            this.txtten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtten_KeyPress);
             // 
             // txtho
             // 
@@ -226,6 +247,7 @@
             this.txtho.Name = "txtho";
             this.txtho.Size = new System.Drawing.Size(199, 26);
             this.txtho.TabIndex = 11;
+            this.txtho.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtho_KeyPress);
             // 
             // txtsodienthoai
             // 
@@ -234,6 +256,7 @@
             this.txtsodienthoai.Name = "txtsodienthoai";
             this.txtsodienthoai.Size = new System.Drawing.Size(184, 26);
             this.txtsodienthoai.TabIndex = 10;
+            this.txtsodienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsodienthoai_KeyPress);
             // 
             // txtdiachi
             // 
@@ -402,6 +425,14 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // Frm_HoiVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -458,5 +489,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button but_TheHV;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

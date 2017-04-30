@@ -149,3 +149,7 @@ C:\Users\jungc\Desktop\QLThuVien-master\QLThuVien-master\New folder\TestThuVien\
 C:\Users\jungc\Desktop\QLThuVien-master\QLThuVien-master\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_QLTra.resources
 C:\Users\jungc\Desktop\QLThuVien-master\QLThuVien-master\New folder\TestThuVien\obj\x86\Debug\TestThuVien.Properties.Resources.resources
 C:\Users\jungc\Desktop\QLThuVien-master\QLThuVien-master\New folder\TestThuVien\obj\x86\Debug\TestThuVien.csproj.GenerateResource.Cache
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\TestThuVien.GiaoDien.Frm_InThongKe.resources
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\RdlCompile.cache
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\obj\x86\Debug\RdlCompile.compiled
+C:\Users\jungc\Desktop\DatHoaiLong\QLThuVien\New folder\TestThuVien\bin\Debug\TestThuVien.exe.config

@@ -46,6 +46,7 @@ namespace TestThuVien.GiaoDien
         private void Frm_DangKy_Load(object sender, EventArgs e)
         {
             this.ActiveControl = pictureBox1;
+            txt_TaiKhoanDK.Text = "---Tên đăng nhập---";
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

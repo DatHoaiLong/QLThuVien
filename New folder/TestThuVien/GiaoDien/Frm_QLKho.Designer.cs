@@ -36,7 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.but_Luu = new System.Windows.Forms.Button();
+            this.but_InThongKe = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ThongKe)).BeginInit();
             this.panel1.SuspendLayout();
@@ -129,21 +129,22 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // but_Luu
+            // but_InThongKe
             // 
-            this.but_Luu.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.but_Luu.BackColor = System.Drawing.Color.DodgerBlue;
-            this.but_Luu.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.but_Luu.FlatAppearance.BorderSize = 0;
-            this.but_Luu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but_Luu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.but_Luu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.but_Luu.Location = new System.Drawing.Point(176, 387);
-            this.but_Luu.Name = "but_Luu";
-            this.but_Luu.Size = new System.Drawing.Size(103, 35);
-            this.but_Luu.TabIndex = 27;
-            this.but_Luu.Text = "In Thống Kê";
-            this.but_Luu.UseVisualStyleBackColor = false;
+            this.but_InThongKe.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.but_InThongKe.BackColor = System.Drawing.Color.DodgerBlue;
+            this.but_InThongKe.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.but_InThongKe.FlatAppearance.BorderSize = 0;
+            this.but_InThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.but_InThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.but_InThongKe.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.but_InThongKe.Location = new System.Drawing.Point(195, 387);
+            this.but_InThongKe.Name = "but_InThongKe";
+            this.but_InThongKe.Size = new System.Drawing.Size(103, 35);
+            this.but_InThongKe.TabIndex = 27;
+            this.but_InThongKe.Text = "In Thống Kê";
+            this.but_InThongKe.UseVisualStyleBackColor = false;
+            this.but_InThongKe.Click += new System.EventHandler(this.but_Luu_Click);
             // 
             // button1
             // 
@@ -154,7 +155,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(346, 387);
+            this.button1.Location = new System.Drawing.Point(355, 387);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 35);
             this.button1.TabIndex = 28;
@@ -169,7 +170,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(630, 440);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.but_Luu);
+            this.Controls.Add(this.but_InThongKe);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView_ThongKe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -191,7 +192,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button but_Luu;
+        private System.Windows.Forms.Button but_InThongKe;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

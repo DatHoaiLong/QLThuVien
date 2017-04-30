@@ -16,6 +16,7 @@ namespace TestThuVien.GiaoDien
     public partial class Frm_QLMuon : Form
     {
         KetNoiDT dt = new KetNoiDT();
+        bool themmoi;
         public Frm_QLMuon()
         {
             InitializeComponent();
@@ -25,8 +26,8 @@ namespace TestThuVien.GiaoDien
         {
             txt_MaHoiVien.Enabled = false;
             txt_MaSach.Enabled = true;
-            txt_NgayHenTra.Enabled = false;
-            txt_NgayMuon.Enabled = false;
+            time_NgayHenTra.Enabled = false;
+            time_NgayMuon.Enabled = false;
             txt_SoLuong.Enabled = false;
             txt_TenHoiVien.Enabled = false;
             txt_TenSach.Enabled =false;
@@ -40,10 +41,10 @@ namespace TestThuVien.GiaoDien
         {
             txt_MaHoiVien.Enabled = true;
             txt_MaSach.Enabled = true;
-            txt_NgayHenTra.Enabled = true;
-            txt_NgayMuon.Enabled = true;
+            time_NgayHenTra.Enabled = true;
+            time_NgayMuon.Enabled = true;
             txt_SoLuong.Enabled = true;
-            txt_TenHoiVien.Enabled = true;
+            txt_TenHoiVien.Enabled = false;
             txt_TenSach.Enabled = false;
             but_kiemtratinhtrang.Enabled = true;
             butluu.Enabled = true;
@@ -53,6 +54,7 @@ namespace TestThuVien.GiaoDien
         }
         private void Frm_QLMuon_Load(object sender, EventArgs e)
         {
+
             txt_MaSach.Text = "MS";
             txt_MaHoiVien.Text = "MHV";
             khoadieukhien();
@@ -75,8 +77,8 @@ namespace TestThuVien.GiaoDien
                 txt_MaSach.Text = dataGridView_QLMuonSach.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txt_TenSach.Text = dataGridView_QLMuonSach.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txt_SoLuong.Text = dataGridView_QLMuonSach.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txt_NgayMuon.Text = dataGridView_QLMuonSach.Rows[e.RowIndex].Cells[5].Value.ToString();
-                txt_NgayHenTra.Text = dataGridView_QLMuonSach.Rows[e.RowIndex].Cells[6].Value.ToString();
+                time_NgayMuon.Text = dataGridView_QLMuonSach.Rows[e.RowIndex].Cells[5].Value.ToString();
+                time_NgayHenTra.Text = dataGridView_QLMuonSach.Rows[e.RowIndex].Cells[6].Value.ToString();
                 modieukhien();
                 but_kiemtratinhtrang.Enabled = false;
                 butluu.Enabled = false;
@@ -85,6 +87,20 @@ namespace TestThuVien.GiaoDien
                 txt_MaSach.Enabled = false;
                 txt_MaHoiVien.Enabled = false;
                 txt_TenHoiVien.Enabled = false;
+                /*******************/
+                txt_SoLuong.Enabled = false;
+                time_NgayMuon.Enabled = false;
+                time_NgayHenTra.Enabled = false;
+                
+
+                if (Frm_DangNhap.quyen.ToString() == "1")
+                {
+
+                }
+                if (Frm_DangNhap.quyen.ToString() == "2")
+                {
+                    but_Xoa.Enabled = false;
+                }
 
             }
             catch (Exception EX)
@@ -141,20 +157,20 @@ namespace TestThuVien.GiaoDien
 
         private void butluu_Click(object sender, EventArgs e)
         {
-            if (txt_MaHoiVien.Text == "" || txt_SoLuong.Text == "" || txt_NgayMuon.Text == "" || txt_NgayHenTra.Text == "")
+            if (txt_MaHoiVien.Text == "" || txt_SoLuong.Text == "" || time_NgayMuon.Text == "" || time_NgayHenTra.Text == "")
             {
                 MessageBox.Show("Chưa nhập đủ thông tin");
                 return;
             }
-            else
+            if (themmoi == true)
             {
                 try
                 {
                     SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
                     SqlParameter para2 = new SqlParameter("@mahoivien", txt_MaHoiVien.Text);
                     SqlParameter para3 = new SqlParameter("@soluongmuon", txt_SoLuong.Text);
-                    SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(txt_NgayMuon.Text));
-                    SqlParameter para5 = new SqlParameter("@ngaytra", Convert.ToDateTime(txt_NgayHenTra.Text));
+                    SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(time_NgayMuon.Text));
+                    SqlParameter para5 = new SqlParameter("@ngaytra", Convert.ToDateTime(time_NgayHenTra.Text));
                     dt.sqlThucThi("themnguoimuonsach", para1, para2, para3, para4, para5);
                     HienThi("");
                     MessageBox.Show("Đã thêm dữ liệu thành công");
@@ -165,6 +181,25 @@ namespace TestThuVien.GiaoDien
                     return;
                 }
             }
+            else
+            {
+                try
+                {
+                    SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
+                    SqlParameter para2 = new SqlParameter("@mahv", txt_MaHoiVien.Text);
+                    SqlParameter para3 = new SqlParameter("@soluongmuon", txt_SoLuong.Text);
+                    SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(time_NgayMuon.Text));
+                    SqlParameter para5 = new SqlParameter("@ngayhentra", Convert.ToDateTime(time_NgayHenTra.Text));
+                    dt.sqlThucThi("Sua_QLMS", para1, para2, para3, para4, para5);
+                    HienThi("");
+                    MessageBox.Show("Sữa Thành Công");
+                }
+                catch
+                {
+                    MessageBox.Show("Không lưu được.");
+                    return;
+                }
+            }      
         }
 
         private void txt_MaHoiVien_KeyDown(object sender, KeyEventArgs e)
@@ -187,22 +222,11 @@ namespace TestThuVien.GiaoDien
 
         private void but_Sua_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
-                SqlParameter para2 = new SqlParameter("@mahv", txt_MaHoiVien.Text);
-                SqlParameter para3 = new SqlParameter("@soluongmuon", txt_SoLuong.Text);
-                SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(txt_NgayMuon.Text));
-                SqlParameter para5 = new SqlParameter("@ngayhentra", Convert.ToDateTime(txt_NgayHenTra.Text));
-                dt.sqlThucThi("Sua_QLMS", para1, para2, para3, para4, para5);
-                HienThi("");
-                MessageBox.Show("Sữa Thành Công");
-            }
-            catch
-            {
-                MessageBox.Show("Không lưu được.");
-                return;
-            }
+
+            modieukhien();
+            txt_MaSach.Enabled = false;
+            txt_MaHoiVien.Enabled = false;
+            themmoi = false;
         }
 
         private void but_Xoa_Click(object sender, EventArgs e)
@@ -228,8 +252,6 @@ namespace TestThuVien.GiaoDien
             txt_MaSach.Enabled = true;
             txt_MaSach.Clear();
             txt_MaHoiVien.Clear();
-            txt_NgayHenTra.Clear();
-            txt_NgayMuon.Clear();
             txt_SoLuong.Clear();
             txt_TenHoiVien.Clear();
             txt_TenSach.Clear();
@@ -237,6 +259,37 @@ namespace TestThuVien.GiaoDien
             khoadieukhien();
             txt_MaHoiVien.Text = "MHV";
             txt_MaSach.Text = "MS";
+            themmoi = true;
         }
+
+        private void txt_MaSach_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /*if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+             */
+        }
+
+        private void txt_MaHoiVien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /*if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }*/
+        }
+
+        private void txt_SoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);
+        }
+        /*
+          e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+         */
     }
 }

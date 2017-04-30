@@ -36,9 +36,11 @@ namespace TestThuVien.GiaoDien
             btnluu.Enabled = false;
             buttomsua.Enabled = false;
             btnxoa.Enabled = false;
+            but_TheHV.Enabled = false;
         }
         void MoDieuKien()
         {
+            but_TheHV.Enabled = false;
             txtmahoivien.Enabled = true;
             txtdiachi.Enabled = true;
             comboxgioitinh.Enabled = true;
@@ -79,6 +81,7 @@ namespace TestThuVien.GiaoDien
             MoDieuKien();
             txtmahoivien.Enabled = false;
             themmoi = true;
+
         }
         void SetNull()
         {
@@ -196,7 +199,8 @@ namespace TestThuVien.GiaoDien
                 txtsodienthoai.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtemail.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[6].Value.ToString();
                 btnxoa.Enabled = true;
-                buttomsua.Enabled = true; 
+                buttomsua.Enabled = true;
+                but_TheHV.Enabled = true;
             }
             catch
             {
@@ -213,6 +217,7 @@ namespace TestThuVien.GiaoDien
                     txtemail.Text = dataGiVHoiVien.Rows[e.RowIndex].Cells[6].Value.ToString();
                     buttomsua.Enabled = true; 
                     btnxoa.Enabled = false;
+                    but_TheHV.Enabled = true;
                 }      
         }
 
@@ -222,6 +227,62 @@ namespace TestThuVien.GiaoDien
            {
             this.Close();
            }
+        }
+
+        private void but_TheHV_Click(object sender, EventArgs e)
+        {
+            printDialog1.Document = printDocument1;
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("THẺ THƯ VIỆN", new Font("Arial", 16, FontStyle.Bold), Brushes.Black,350,50);
+            /*ma hoi vien*/
+            e.Graphics.DrawString("Mã hội viên :", new Font("Arial", 12), Brushes.Black, 300, 100);
+            e.Graphics.DrawString(txtmahoivien.Text, new Font("Arial", 12), Brushes.Black,430, 100);
+            /*ho ten*/
+            e.Graphics.DrawString("Tên hội viên :", new Font("Arial", 12), Brushes.Black, 300, 130);
+            e.Graphics.DrawString(txtho.Text+" "+txtten.Text, new Font("Arial", 12), Brushes.Black, 430, 130);
+            /*gioi tinh & sdt*/
+            e.Graphics.DrawString("Giới tính :", new Font("Arial", 12), Brushes.Black, 300, 160);
+            e.Graphics.DrawString(comboxgioitinh.Text+" / ", new Font("Arial", 12), Brushes.Black, 400, 160);
+            e.Graphics.DrawString("SĐT : ", new Font("Arial", 12), Brushes.Black,450, 160);
+            e.Graphics.DrawString(txtsodienthoai.Text, new Font("Arial", 12), Brushes.Black,490, 160);
+            /*dia chi*/
+            e.Graphics.DrawString("Địa chỉ :", new Font("Arial", 12), Brushes.Black, 300, 190);
+            e.Graphics.DrawString(txtdiachi.Text, new Font("Arial", 12), Brushes.Black, 430, 190);
+            /*ngay thang nam */
+            e.Graphics.DrawString("Ngày ___ Tháng ___ Năm ______", new Font("Arial", 10), Brushes.Black, 350, 230);
+            e.Graphics.DrawString("Giám đốc", new Font("Arial", 12,FontStyle.Bold), Brushes.Black, 450, 260);
+            /*anh*/
+            e.Graphics.DrawString("Ảnh(6x4)", new Font("Arial", 10), Brushes.Black,200, 150);
+            /*ngay het han*/
+            e.Graphics.DrawString("Ngày hết hạn", new Font("Arial", 10), Brushes.Black, 200, 230);
+            e.Graphics.DrawString("___/___/______", new Font("Arial", 10), Brushes.Black, 200, 260);
+
+        }
+        private void txtho_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);
+            /*chi cho nhap vao ky tu*/
+        }
+
+        private void txtsodienthoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            /*chi cho nhapn vao so*/
+        }
+
+        private void txtten_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);
         }
     }
 }
