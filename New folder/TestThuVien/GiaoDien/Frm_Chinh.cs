@@ -102,8 +102,7 @@ namespace TestThuVien.GiaoDien
                 txtresote.Enabled = false;
                 but_Restore.Enabled = false;
             }
-
-          
+     
         }
 
         private void but_HoiVien_Click(object sender, EventArgs e)
@@ -315,5 +314,8 @@ namespace TestThuVien.GiaoDien
                 MessageBox.Show(ex.Message);
             }
         }
+
+     
+       
     }
 }

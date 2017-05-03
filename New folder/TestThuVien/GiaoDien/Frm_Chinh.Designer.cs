@@ -497,6 +497,7 @@
             this.listView1.Size = new System.Drawing.Size(928, 490);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
+      
             // 
             // imgSach
             // 
