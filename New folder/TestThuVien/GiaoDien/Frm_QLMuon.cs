@@ -112,6 +112,7 @@ namespace TestThuVien.GiaoDien
 
         private void but_kiemtratinhtrang_Click(object sender, EventArgs e)
         {
+            themmoi = true;
             if (txt_MaSach.Text == "MS")
             {
                 MessageBox.Show("Chưa nhập mã sách.");
@@ -157,49 +158,62 @@ namespace TestThuVien.GiaoDien
 
         private void butluu_Click(object sender, EventArgs e)
         {
-            if (txt_MaHoiVien.Text == "" || txt_SoLuong.Text == "" || time_NgayMuon.Text == "" || time_NgayHenTra.Text == "")
+             SqlParameter prr = new SqlParameter("@masach", txt_MaSach.Text);
+                DataTable showsls = dt.sqlLayDuLieu("sp_SachConLai", prr);
+               
+            if(Convert.ToInt32(txt_SoLuong.Text)> Convert.ToInt32(showsls.Rows[0][1].ToString()))
             {
-                MessageBox.Show("Chưa nhập đủ thông tin");
-                return;
-            }
-            if (themmoi == true)
+                MessageBox.Show("Quá số lượng trong kho nhập lại số lượng");
+                txt_SoLuong.Clear();
+                txt_SoLuong.Focus();
+
+            }else
             {
-                try
+                if (txt_MaHoiVien.Text == "" || txt_SoLuong.Text == "" || time_NgayMuon.Text == "" || time_NgayHenTra.Text == "")
                 {
-                    SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
-                    SqlParameter para2 = new SqlParameter("@mahoivien", txt_MaHoiVien.Text);
-                    SqlParameter para3 = new SqlParameter("@soluongmuon", txt_SoLuong.Text);
-                    SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(time_NgayMuon.Text));
-                    SqlParameter para5 = new SqlParameter("@ngaytra", Convert.ToDateTime(time_NgayHenTra.Text));
-                    dt.sqlThucThi("themnguoimuonsach", para1, para2, para3, para4, para5);
-                    HienThi("");
-                    MessageBox.Show("Đã thêm dữ liệu thành công");
-                }
-                catch
-                {
-                    MessageBox.Show("lỗi");
+                    MessageBox.Show("Chưa nhập đủ thông tin");
                     return;
                 }
+                if (themmoi == true)
+                {
+                    try
+                    {
+                        SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
+                        SqlParameter para2 = new SqlParameter("@mahoivien", txt_MaHoiVien.Text);
+                        SqlParameter para3 = new SqlParameter("@soluongmuon", txt_SoLuong.Text);
+                        SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(time_NgayMuon.Text));
+                        SqlParameter para5 = new SqlParameter("@ngaytra", Convert.ToDateTime(time_NgayHenTra.Text));
+                        dt.sqlThucThi("themnguoimuonsach", para1, para2, para3, para4, para5);
+                        HienThi("");
+                        MessageBox.Show("Đã thêm dữ liệu thành công");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn đang mượn sách này nên không thể mượn thêm.");
+                        return;
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
+                        SqlParameter para2 = new SqlParameter("@mahv", txt_MaHoiVien.Text);
+                        SqlParameter para3 = new SqlParameter("@soluongmuon", txt_SoLuong.Text);
+                        SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(time_NgayMuon.Text));
+                        SqlParameter para5 = new SqlParameter("@ngayhentra", Convert.ToDateTime(time_NgayHenTra.Text));
+                        dt.sqlThucThi("Sua_QLMS", para1, para2, para3, para4, para5);
+                        HienThi("");
+                        MessageBox.Show("Sửa Thành Công");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không lưu được.");
+                        return;
+                    }
+                }      
             }
-            else
-            {
-                try
-                {
-                    SqlParameter para1 = new SqlParameter("@masach", txt_MaSach.Text);
-                    SqlParameter para2 = new SqlParameter("@mahv", txt_MaHoiVien.Text);
-                    SqlParameter para3 = new SqlParameter("@soluongmuon", txt_SoLuong.Text);
-                    SqlParameter para4 = new SqlParameter("@ngaymuon", Convert.ToDateTime(time_NgayMuon.Text));
-                    SqlParameter para5 = new SqlParameter("@ngayhentra", Convert.ToDateTime(time_NgayHenTra.Text));
-                    dt.sqlThucThi("Sua_QLMS", para1, para2, para3, para4, para5);
-                    HienThi("");
-                    MessageBox.Show("Sữa Thành Công");
-                }
-                catch
-                {
-                    MessageBox.Show("Không lưu được.");
-                    return;
-                }
-            }      
+          
         }
 
         private void txt_MaHoiVien_KeyDown(object sender, KeyEventArgs e)
@@ -281,7 +295,10 @@ namespace TestThuVien.GiaoDien
 
         private void txt_SoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
         /*
           e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);

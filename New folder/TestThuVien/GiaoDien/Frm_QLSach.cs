@@ -153,23 +153,34 @@ namespace TestThuVien.GiaoDien
 
         private void btnxoa_Click_1(object sender, EventArgs e)
         {
-        
-                 try
+
+            SqlParameter para = new SqlParameter("@masach", txt_MaSach.Text);
+            DataTable table = new DataTable();
+            table = kn.sqlLayDuLieu("sp_TonTaiSach",para);
+            if (table.Rows[0]["tontai"].ToString() == "0")
             {
-                ec.Masach= txt_MaSach.Text;
-                bus.XoaDuLieu(ec);
-                MessageBox.Show("Đã xóa thành công");
-                pictureBox3.BackgroundImage = null;
-                System.GC.Collect();
-                System.GC.WaitForPendingFinalizers();
-                File.Delete(dataGridView_Sach.Rows[dataGridView_Sach.CurrentCell.RowIndex].Cells[7].Value.ToString());
-                KhoaDieuKien();
-                SetNull();
-                HienThi("");
-            }
-            catch(Exception ex)
+
+
+                try
+                {
+                    ec.Masach = txt_MaSach.Text;
+                    bus.XoaDuLieu(ec);
+                    MessageBox.Show("Đã xóa thành công");
+                    pictureBox3.BackgroundImage = null;
+                    System.GC.Collect();
+                    System.GC.WaitForPendingFinalizers();
+                    File.Delete(dataGridView_Sach.Rows[dataGridView_Sach.CurrentCell.RowIndex].Cells[7].Value.ToString());
+                    KhoaDieuKien();
+                    SetNull();
+                    HienThi("");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Sách này đang cho mượn không thể xóa");
             }
         }
 

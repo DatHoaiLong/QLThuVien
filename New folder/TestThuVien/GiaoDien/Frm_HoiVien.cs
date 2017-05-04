@@ -70,6 +70,12 @@ namespace TestThuVien.GiaoDien
 
         private void btnthemmoi_Click(object sender, EventArgs e)
         {
+            txtsodienthoai.Clear();
+            txtemail.Clear();
+            txtho.Clear();
+            txtten.Clear();
+            txtdiachi.Clear();
+            txtsodienthoai.Focus();
             DataTable datams = new DataTable();
             datams = bus.LayDuLieuBang("select mahoivien from hoivien");
             string macuoicung = datams.Rows[datams.Rows.Count - 1]["MaHoiVien"].ToString();
@@ -201,6 +207,7 @@ namespace TestThuVien.GiaoDien
                 btnxoa.Enabled = true;
                 buttomsua.Enabled = true;
                 but_TheHV.Enabled = true;
+                btnluu.Enabled = false;
             }
             catch
             {
@@ -218,6 +225,7 @@ namespace TestThuVien.GiaoDien
                     buttomsua.Enabled = true; 
                     btnxoa.Enabled = false;
                     but_TheHV.Enabled = true;
+                    btnluu.Enabled = false;
                 }      
         }
 
@@ -251,10 +259,10 @@ namespace TestThuVien.GiaoDien
             e.Graphics.DrawString("Giới tính :", new Font("Arial", 12), Brushes.Black, 300, 160);
             e.Graphics.DrawString(comboxgioitinh.Text+" / ", new Font("Arial", 12), Brushes.Black, 400, 160);
             e.Graphics.DrawString("SĐT : ", new Font("Arial", 12), Brushes.Black,450, 160);
-            e.Graphics.DrawString(txtsodienthoai.Text, new Font("Arial", 12), Brushes.Black,490, 160);
+            e.Graphics.DrawString(txtsodienthoai.Text, new Font("Arial", 12), Brushes.Black,500, 160);
             /*dia chi*/
             e.Graphics.DrawString("Địa chỉ :", new Font("Arial", 12), Brushes.Black, 300, 190);
-            e.Graphics.DrawString(txtdiachi.Text, new Font("Arial", 12), Brushes.Black, 430, 190);
+            e.Graphics.DrawString(txtdiachi.Text, new Font("Arial", 12), Brushes.Black,390, 190);
             /*ngay thang nam */
             e.Graphics.DrawString("Ngày ___ Tháng ___ Năm ______", new Font("Arial", 10), Brushes.Black, 350, 230);
             e.Graphics.DrawString("Giám đốc", new Font("Arial", 12,FontStyle.Bold), Brushes.Black, 450, 260);

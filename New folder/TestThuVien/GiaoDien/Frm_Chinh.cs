@@ -251,7 +251,9 @@ namespace TestThuVien.GiaoDien
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (MessageBox.Show(ex.Message, "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                    {
+                    }
                 }
 
             }

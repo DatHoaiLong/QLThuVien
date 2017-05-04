@@ -118,11 +118,16 @@ namespace TestThuVien.GiaoDien
                         SqlParameter para2 = new SqlParameter("@mahv", txt_MaHV.Text);
                         SqlParameter para3 = new SqlParameter("@soluongtra", txt_SoLuong.Text);
                         kn.sqlThucThi("sp_Tra", para1, para2, para3);
+                      
                         HienThi("");
                         MessageBox.Show("Bạn đã trả  " + txt_SoLuong.Text + " quyển " + txt_TenSach.Text + " Bạn còn " + (soluong - Convert.ToInt32(txt_SoLuong.Text)) + " quyển chưa trả");
-                    }catch(Exception ex)
+                        txt_MaHV.Clear();
+                        txt_SoLuong.Clear();
+                        txt_TenHV.Clear();
+                        txt_TenSach.Clear();
+                    }catch
                     {
-                        MessageBox.Show(ex.Message);
+                       
                     }
                 }
                 else if (soluong == Convert.ToInt32(txt_SoLuong.Text))
@@ -135,14 +140,17 @@ namespace TestThuVien.GiaoDien
                             SqlParameter para1 = new SqlParameter("@masach", masach);
                             SqlParameter para2 = new SqlParameter("@mahv", txt_MaHV.Text);
                             kn.sqlThucThi("Xoa_QLMS", para1, para2);
+                         
                             HienThi("");
-
                             MessageBox.Show("Bạn đã trả hết sách "+txt_TenSach.Text );
+                            txt_MaHV.Clear();
+                            txt_SoLuong.Clear();
+                            txt_TenHV.Clear();
+                            txt_TenSach.Clear();
                         }
-                        catch (Exception ex)
+                        catch 
                         {
-                            MessageBox.Show(ex.Message);
-                            return;
+     
                         }
 
                     }

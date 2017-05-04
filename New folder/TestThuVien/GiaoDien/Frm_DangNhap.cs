@@ -64,6 +64,7 @@ namespace TestThuVien.GiaoDien
         {
             try
             {
+                
                 SqlParameter pr1 = new SqlParameter("@tendn", txt_TaiKhoanDN.Text);
                 //SqlParameter pr2 = new SqlParameter("@mkdn", txt_MatKhauDN.Text);
                 tb = kd.sqlLayDuLieu("dangnhap", pr1);
@@ -83,17 +84,18 @@ namespace TestThuVien.GiaoDien
                        this.Show();
                        txt_TaiKhoanDN.Clear();
                        txt_MatKhauDN.Clear();
-                       //this.Close();
                }
                 else
                {
-                   MessageBox.Show("Sai Mật Khẩu");
+                   MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
                    txt_MatKhauDN.Clear();
                    txt_MatKhauDN.Focus();
                }
             }catch
             {
-                MessageBox.Show("Tài khoản chưa đăng ký");
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu");
+                txt_MatKhauDN.Clear();
+                txt_MatKhauDN.Focus();
             }
         }
 
