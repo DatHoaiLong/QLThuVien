@@ -317,6 +317,11 @@ namespace TestThuVien.GiaoDien
             }
         }
 
+        private void Frm_Chinh_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            /*Application.Exit();*/
+        }
+
      
        
     }

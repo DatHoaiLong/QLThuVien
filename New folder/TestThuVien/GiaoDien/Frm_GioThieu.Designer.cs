@@ -28,22 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_GioThieu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(585, 97);
             this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(585, 97);
+            this.panel2.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(200, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(168, 40);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Giới Thiệu";
             // 
             // label8
             // 
@@ -92,6 +115,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Location = new System.Drawing.Point(16, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(328, 207);
+            this.label4.TabIndex = 8;
+            this.label4.Text = resources.GetString("label4.Text");
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -125,19 +159,6 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Hàn Quốc Long";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(16, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(328, 207);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "-Phần mềm quản lý thư viện do \r\nnhóm sinh viên Trường Đại Học Lạc Hồng\r\nphát triể" +
-    "n.\r\n\r\n-Dưới sự hướng dẫn của giảng viên \r\nNguyễn Minh Phúc.\r\n\r\n-Phần mềm được ho" +
-    "àn thành và đóng gói \r\nngày__/__/2017. ";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -148,28 +169,6 @@
             this.label5.Size = new System.Drawing.Size(86, 26);
             this.label5.TabIndex = 9;
             this.label5.Text = "Ver.1.01.";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(585, 97);
-            this.panel2.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(200, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(168, 40);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Giới Thiệu";
             // 
             // panel3
             // 
@@ -200,11 +199,11 @@
             this.Text = "Frm_GioThieu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);

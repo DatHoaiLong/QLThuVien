@@ -72,6 +72,7 @@ namespace TestThuVien.GiaoDien
                 masach = dataGridView_QLTraSach.Rows[e.RowIndex].Cells[2].Value.ToString();
                 soluong = Convert.ToInt32(dataGridView_QLTraSach.Rows[e.RowIndex].Cells[4].Value.ToString());
                 modukien();
+                but_TraSach.Enabled = false;
              
 
             }
@@ -125,6 +126,7 @@ namespace TestThuVien.GiaoDien
                         txt_SoLuong.Clear();
                         txt_TenHV.Clear();
                         txt_TenSach.Clear();
+                        txt_MaHV.Text = "MHV";
                     }catch
                     {
                        
@@ -147,6 +149,7 @@ namespace TestThuVien.GiaoDien
                             txt_SoLuong.Clear();
                             txt_TenHV.Clear();
                             txt_TenSach.Clear();
+                            txt_MaHV.Text = "MHV";
                         }
                         catch 
                         {
@@ -178,6 +181,7 @@ namespace TestThuVien.GiaoDien
            if (Convert.ToInt32(ngay.Rows[0][0].ToString()) >=0)
            {
                MessageBox.Show("Bạn đã trả đúng hạn.");
+               but_TraSach.Enabled = true;
  
            }
            else
@@ -186,6 +190,7 @@ namespace TestThuVien.GiaoDien
                Frm_BienBan bb = new Frm_BienBan();
                bb.truyendulieu(txt_TenHV.Text, txt_MaHV.Text);
                bb.ShowDialog();
+               but_TraSach.Enabled = true;
            }
               
             }

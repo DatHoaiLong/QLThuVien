@@ -497,7 +497,6 @@
             this.listView1.Size = new System.Drawing.Size(928, 490);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
-      
             // 
             // imgSach
             // 
@@ -536,6 +535,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Chinh";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Chinh_FormClosed);
             this.Load += new System.EventHandler(this.Frm_Chinh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

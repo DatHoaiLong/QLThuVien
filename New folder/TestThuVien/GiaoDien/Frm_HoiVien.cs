@@ -275,8 +275,11 @@ namespace TestThuVien.GiaoDien
         }
         private void txtho_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);
-            /*chi cho nhap vao ky tu*/
+            /*ko cho nhap so*/
+            if(Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtsodienthoai_KeyPress(object sender, KeyPressEventArgs e)
@@ -285,12 +288,15 @@ namespace TestThuVien.GiaoDien
             {
                 e.Handled = true;
             }
-            /*chi cho nhapn vao so*/
+            /*ko cho nhap ky tu*/
         }
 
         private void txtten_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(e.KeyChar >= 65 && e.KeyChar <= 122 || e.KeyChar == 8);
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

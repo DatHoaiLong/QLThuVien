@@ -186,6 +186,13 @@ namespace TestThuVien.GiaoDien
                         dt.sqlThucThi("themnguoimuonsach", para1, para2, para3, para4, para5);
                         HienThi("");
                         MessageBox.Show("Đã thêm dữ liệu thành công");
+                        txt_MaHoiVien.Clear();
+                        txt_MaSach.Clear();
+                        txt_SoLuong.Clear();
+                        txt_TenSach.Clear();
+                        txt_TenHoiVien.Clear();
+                        txt_MaSach.Text = "MS";
+                        txt_MaHoiVien.Text = "MHV";
                     }
                     catch
                     {
@@ -205,6 +212,13 @@ namespace TestThuVien.GiaoDien
                         dt.sqlThucThi("Sua_QLMS", para1, para2, para3, para4, para5);
                         HienThi("");
                         MessageBox.Show("Sửa Thành Công");
+                        txt_MaHoiVien.Clear();
+                        txt_MaSach.Clear();
+                        txt_SoLuong.Clear();
+                        txt_TenSach.Clear();
+                        txt_TenHoiVien.Clear();
+                        txt_MaSach.Text = "MS";
+                        txt_MaHoiVien.Text = "MHV";
                     }
                     catch
                     {

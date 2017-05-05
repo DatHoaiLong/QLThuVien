@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>-Phần mềm quản lý thư viện do 
+nhóm sinh viên Trường Đại Học Lạc Hồng
+phát triển.
+
+-Dưới sự hướng dẫn của giảng viên 
+Nguyễn Minh Phúc.
+
+-Phần mềm được hoàn thành và đóng gói 
+ngày 08/05/2017. </value>
+  </data>
 </root>

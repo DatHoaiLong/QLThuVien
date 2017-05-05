@@ -223,6 +223,7 @@
             this.txt_TenSach.Name = "txt_TenSach";
             this.txt_TenSach.Size = new System.Drawing.Size(224, 26);
             this.txt_TenSach.TabIndex = 13;
+            this.txt_TenSach.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TenSach_KeyPress);
             // 
             // txt_TenTacGia
             // 
@@ -232,6 +233,7 @@
             this.txt_TenTacGia.Name = "txt_TenTacGia";
             this.txt_TenTacGia.Size = new System.Drawing.Size(224, 26);
             this.txt_TenTacGia.TabIndex = 14;
+            this.txt_TenTacGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TenTacGia_KeyPress);
             // 
             // buttomsua
             // 
@@ -426,6 +428,7 @@
             this.txt_SoLuong.Name = "txt_SoLuong";
             this.txt_SoLuong.Size = new System.Drawing.Size(48, 26);
             this.txt_SoLuong.TabIndex = 34;
+            this.txt_SoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SoLuong_KeyPress);
             // 
             // btnluu
             // 
