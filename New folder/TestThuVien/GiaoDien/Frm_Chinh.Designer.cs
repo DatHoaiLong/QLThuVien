@@ -99,7 +99,7 @@
             this.butlinkrestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butlinkrestore.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.butlinkrestore.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.butlinkrestore.Location = new System.Drawing.Point(35, 465);
+            this.butlinkrestore.Location = new System.Drawing.Point(35, 487);
             this.butlinkrestore.Name = "butlinkrestore";
             this.butlinkrestore.Size = new System.Drawing.Size(100, 26);
             this.butlinkrestore.TabIndex = 25;
@@ -115,7 +115,7 @@
             this.butlinbk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butlinbk.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.butlinbk.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.butlinbk.Location = new System.Drawing.Point(36, 339);
+            this.butlinbk.Location = new System.Drawing.Point(36, 361);
             this.butlinbk.Name = "butlinbk";
             this.butlinbk.Size = new System.Drawing.Size(102, 26);
             this.butlinbk.TabIndex = 24;
@@ -126,7 +126,7 @@
             // txtresote
             // 
             this.txtresote.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtresote.Location = new System.Drawing.Point(20, 433);
+            this.txtresote.Location = new System.Drawing.Point(20, 455);
             this.txtresote.Name = "txtresote";
             this.txtresote.ReadOnly = true;
             this.txtresote.Size = new System.Drawing.Size(135, 26);
@@ -140,7 +140,7 @@
             this.but_Restore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Restore.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Restore.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.but_Restore.Location = new System.Drawing.Point(35, 497);
+            this.but_Restore.Location = new System.Drawing.Point(35, 519);
             this.but_Restore.Name = "but_Restore";
             this.but_Restore.Size = new System.Drawing.Size(100, 30);
             this.but_Restore.TabIndex = 21;
@@ -156,7 +156,7 @@
             this.but_Backup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.but_Backup.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.but_Backup.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.but_Backup.Location = new System.Drawing.Point(36, 371);
+            this.but_Backup.Location = new System.Drawing.Point(36, 393);
             this.but_Backup.Name = "but_Backup";
             this.but_Backup.Size = new System.Drawing.Size(100, 30);
             this.but_Backup.TabIndex = 19;
@@ -167,7 +167,7 @@
             // txt_Backup
             // 
             this.txt_Backup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_Backup.Location = new System.Drawing.Point(21, 307);
+            this.txt_Backup.Location = new System.Drawing.Point(21, 329);
             this.txt_Backup.Name = "txt_Backup";
             this.txt_Backup.ReadOnly = true;
             this.txt_Backup.Size = new System.Drawing.Size(135, 26);
@@ -177,7 +177,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::TestThuVien.Properties.Resources.h123;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 287);
+            this.pictureBox2.Location = new System.Drawing.Point(9, 310);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(158, 274);
             this.pictureBox2.TabIndex = 7;
@@ -191,7 +191,7 @@
             "Thể Loại",
             "Tên Sách",
             "Tên Tác Giả"});
-            this.cob_TimKiem.Location = new System.Drawing.Point(2, 135);
+            this.cob_TimKiem.Location = new System.Drawing.Point(23, 135);
             this.cob_TimKiem.Name = "cob_TimKiem";
             this.cob_TimKiem.Size = new System.Drawing.Size(121, 28);
             this.cob_TimKiem.TabIndex = 4;
@@ -201,7 +201,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Blue;
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(0, 214);
+            this.panel4.Location = new System.Drawing.Point(0, 250);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(170, 34);
             this.panel4.TabIndex = 3;
@@ -225,7 +225,7 @@
             this.but_TiemKiem.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.but_TiemKiem.FlatAppearance.BorderSize = 0;
             this.but_TiemKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.but_TiemKiem.Location = new System.Drawing.Point(127, 164);
+            this.but_TiemKiem.Location = new System.Drawing.Point(66, 203);
             this.but_TiemKiem.Name = "but_TiemKiem";
             this.but_TiemKiem.Size = new System.Drawing.Size(40, 40);
             this.but_TiemKiem.TabIndex = 0;
@@ -235,7 +235,7 @@
             // TXT_TimKiem
             // 
             this.TXT_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TXT_TimKiem.Location = new System.Drawing.Point(3, 171);
+            this.TXT_TimKiem.Location = new System.Drawing.Point(24, 171);
             this.TXT_TimKiem.Name = "TXT_TimKiem";
             this.TXT_TimKiem.Size = new System.Drawing.Size(120, 26);
             this.TXT_TimKiem.TabIndex = 1;
